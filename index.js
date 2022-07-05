@@ -4,7 +4,7 @@ const mysql = require('mysql2'); // DOCU https://www.npmjs.com/package/mysql2
 const { restoreDefaultPrompts } = require('inquirer');
 
 var ui = new inquirer.ui.BottomBar();
-// sql2 Connect to database 
+// Mysql Connect to database Step 1.
 const db = mysql.createConnection(
   {
     host: 'localhost',
@@ -37,7 +37,7 @@ function funcViewAllEmployees() { //WORKING! ALL DONE EXCEPT FOR MANAGER
     // console.info('rows: ', rows); 
     // console.log('What Would You Like To Do ---> View All Employees')
     console.table(rows);
-    primaryQ();
+    
   });
 }
 function funcViewAllRoles() { //WORKING! COMPLETED !!!
@@ -52,7 +52,7 @@ function funcViewAllRoles() { //WORKING! COMPLETED !!!
     // console.info('rows: ', rows);
     // console.log('What Would You Like To Do ---> View All Employees')
     console.table(rows);
-    primaryQ();
+    
   });
 }
 function funcViewAllDepartments() { //WORKING! COMPLETED!!!!
@@ -64,7 +64,7 @@ function funcViewAllDepartments() { //WORKING! COMPLETED!!!!
     // console.info('rows: ', rows);
     // console.log('What Would You Like To Do ---> View All Employees')
     console.table(rows);
-    primaryQ();
+    
   });
 }
 // ADD FUNCTIONS
@@ -121,51 +121,8 @@ function funcAddDepartment() {//WORKING! COMPLETED!!!!
     const params = [answers.departmentName];
     db.query(sql, params, (err, result) => {
       console.log(`Success: New Department: ${answers.departmentName}`);
-      primaryQ();
+     
     });
   })
 }
-// MAIN INIT (STARTUP FUNCTION)
-function primaryQ() {
-  inquirer.prompt([
-    {
-      type: 'list',
-      name: 'startupQ',
-      message: 'What would you like to do?',
-      choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department', new inquirer.Separator(), 'QUIT', new inquirer.Separator()],
-    }
-  ]).then(answers => {
-    //console.info('Answer:', answers.startupQ);
-    switch (answers.startupQ) {
-      case 'View All Employees':
-        funcViewAllEmployees();
-        break;
-      case 'Add Employee':
-        funcAddEmployee();
-        break;
-      case 'Update Employee Role':
-        funcUpdateEmployeeRole();
-        break;
-      case 'View All Roles':
-        funcViewAllRoles();
-        break;
-      case 'Add Role':
-        funcAddRole();
-        break;
-      case 'View All Departments':
-        funcViewAllDepartments();
-        break;
-      case 'Add Department':
-        funcAddDepartment();
-        break;
-      case 'QUIT':
-        break;
-    }
-  }
-  )
-}
-primaryQ();
-/**
- * Coded By Byron Dalberg
- * Coded On 7/1/2022
- */
+
