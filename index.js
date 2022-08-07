@@ -143,16 +143,6 @@ function funcChoice() {
   //   console.log('rolelist: ', roleList);
     console.log('What Would You Like To Do ---> View All Employees')
     inquirer.prompt([
-      // {
-      //   type: 'lis',
-      //   name: 'firstName',
-      //   message: 'What Is The New Employees First Name:'
-      // },
-      // {
-      //   type: 'input',
-      //   name: 'lastName',
-      //   message: 'What Is The New Employees Last Name:'
-      // },
       {
         type: 'list',
         name: 'options',
@@ -181,7 +171,13 @@ function funcChoice() {
         
       break
 
-      case 
+      case 'viewRole':
+        funcViewAllRoles()
+
+        break
+
+        case 'viewDepart':
+          funcViewAllDepartments()
 
     }
     
