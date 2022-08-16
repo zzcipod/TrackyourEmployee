@@ -130,17 +130,18 @@ function funcAddDepartment() {//WORKING! COMPLETED!!!!
 funcChoice();
 
 function funcChoice() {
-  // roleList = [];
-  // const sqlCheck = `SELECT id, role_title FROM role_table`;
-  // console.log('got here');
-  // db.query(sqlCheck, (err, rows) => {
-  //   console.info('sql: ', sqlCheck);
-  //   console.info('rows: ', rows);
-  //   roleList = rows.map(a => a.role_title);
-  //   roleListId = rows.map(element => {
-  //     return {name: element.role_title, value: element.id}
-  //   })
-  //   console.log('rolelist: ', roleList);
+  roleList = [];
+  const sqlCheck = `SELECT id, role_title FROM role_table`;
+  console.log('got here');
+  db.query(sqlCheck, (err, rows) => {
+    console.info('sql: ', sqlCheck);
+    console.info('rows: ', rows);
+    roleList = rows.map(a => a.role_title);
+    roleListId = rows.map(element => {
+      return {name: element.role_title, value: element.id}
+    })
+    console.log('rolelist: ', roleList);
+    
     console.log('What Would You Like To Do ---> View All Employees')
     inquirer.prompt([
       {
