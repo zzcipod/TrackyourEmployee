@@ -2,19 +2,19 @@ const inquirer = require('inquirer'); // V8.2.4 DOCU https://www.npmjs.com/packa
 const cTable = require('console.table'); //DOCU https://www.npmjs.com/package/console.table
 const mysql = require('mysql2'); // DOCU https://www.npmjs.com/package/mysql2 
 
-// var ui = new inquirer.ui.BottomBar();
+var ui = new inquirer.ui.BottomBar();
 // Mysql Connect to database Step 1.
-// const db = mysql.createConnection(
-//   {
-//     host: 'localhost',
-//     // MySQL username,
-//     user: 'root',
-//     // Add MySQL password here
-//     password: 'Zz123456789!',
-//     database: 'Tracker_db'
-//   },
-//   console.log(`Connected to the register_db database.`)
-// );
+const db = mysql.createConnection(
+  {
+    host: 'localhost',
+    // MySQL username,
+    user: 'root',
+    // Add MySQL password here
+    password: 'Zz123456789!',
+    database: 'Tracker_db'
+  },
+  console.log(`Connected to the register_db database.`)
+);
 
 // Content Management System (CMS)
 // ADD FUNCTIONS
