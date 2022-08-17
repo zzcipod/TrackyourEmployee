@@ -196,7 +196,7 @@ const db = mysql.createConnection(
         // MySQL username,
         user: 'root',
         // TODO: Add MySQL password here
-        password: 'stupidpassword1',
+        password: '123456789',
         database: 'company_db',
     },
     console.log(`Connected to the company_db database.`)
@@ -318,7 +318,7 @@ function createEmployee() {
                 if (err) {
                     console.log(err)
                 }
-                console.log('Added to database!')
+                console.log('Added to database successful!')
             });
             createDirectory();
 
@@ -341,7 +341,7 @@ function updateEmployee() {
             {
                 type: 'input',
                 name: 'role_id',
-                message: "What is the id of the employee's new role?",
+                message: "What is employee's new role id?",
 
 
             },
@@ -356,7 +356,7 @@ function updateEmployee() {
                 if (err) {
                     console.log(err);
                 }
-                console.log("Role updated!")
+                console.log("Role updated successful!")
             });
         
             createDirectory()
@@ -373,17 +373,17 @@ function addRole() {
             {
                 type: 'input',
                 name: 'title',
-                message: "What is the name of the new role?",
+                message: "What is new role title?",
             },
             {
                 type: 'number',
                 name: 'salary',
-                message: "What is the salary for this role?",
+                message: "What is new role salary?",
             },
             {
                 type: 'input',
                 name: 'department_id',
-                message: "What is the id of the department this role belongs to?",
+                message: "What is this role department ID?",
             },
         ])
 
@@ -395,7 +395,7 @@ function addRole() {
                 if (err) {
                     console.error(err)
                 }
-                console.log("Role added!");
+                console.log("Role added successful!");
 
             });
             createDirectory()
@@ -423,7 +423,7 @@ function addDepartment() {
                 if (err) {
                     console.log(err);
                 }
-                console.log("Department Added!")
+                console.log("Department Added successful!")
             });
 
             createDirectory();
@@ -506,7 +506,7 @@ function employeeUpdateQuery({ id, role }) {
         if (err) {
             console.log(err);
         }
-        console.log("Role updated!")
+        console.log("Role updated  successful!")
     });
     createDirectory()
 };
